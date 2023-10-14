@@ -1,125 +1,243 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      title: "MixPad",
+      debugShowCheckedModeBanner: false,
+      home: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.black,
+          appBar: AppBar(
+            backgroundColor: Colors.black,
+            title: Text("MixPad", style: GoogleFonts.orbitron(fontSize: 30.0)),
+          ),
+          body: Center(
+            child: Wrap(
+              spacing: 6,
+              runSpacing: 6,
+              children: [
+                MixPad(
+                  colorCenter: Color(0xffCD80F7),
+                  colorOutline: Color(0xff8A47CC),
+                  note: "1.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffADCBFC),
+                  colorOutline: Color(0xff067CCB),
+                  note: "2.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffff2525),
+                  colorOutline: Color(0xffc40050),
+                  note: "3.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffADCBFC),
+                  colorOutline: Color(0xff067CCB),
+                  note: "4.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffCD80F7),
+                  colorOutline: Color(0xff8A47CC),
+                  note: "5.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffADCBFC),
+                  colorOutline: Color(0xff067CCB),
+                  note: "6.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffff2525),
+                  colorOutline: Color(0xffc40050),
+                  note: "7.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffADCBFC),
+                  colorOutline: Color(0xff067CCB),
+                  note: "8.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffCD80F7),
+                  colorOutline: Color(0xff8A47CC),
+                  note: "9.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffADCBFC),
+                  colorOutline: Color(0xff067CCB),
+                  note: "10.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffff2525),
+                  colorOutline: Color(0xffc40050),
+                  note: "11.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffADCBFC),
+                  colorOutline: Color(0xff067CCB),
+                  note: "12.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffCD80F7),
+                  colorOutline: Color(0xff8A47CC),
+                  note: "13.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffADCBFC),
+                  colorOutline: Color(0xff067CCB),
+                  note: "14.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffff2525),
+                  colorOutline: Color(0xffc40050),
+                  note: "15.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffADCBFC),
+                  colorOutline: Color(0xff067CCB),
+                  note: "16.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffCD80F7),
+                  colorOutline: Color(0xff8A47CC),
+                  note: "17.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffADCBFC),
+                  colorOutline: Color(0xff067CCB),
+                  note: "18.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffff2525),
+                  colorOutline: Color(0xffc40050),
+                  note: "18.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffADCBFC),
+                  colorOutline: Color(0xff067CCB),
+                  note: "19.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffCD80F7),
+                  colorOutline: Color(0xff8A47CC),
+                  note: "20.wav",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffADCBFC),
+                  colorOutline: Color(0xff067CCB),
+                  note: "21.mp3",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffff2525),
+                  colorOutline: Color(0xffc40050),
+                  note: "22.wav",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffADCBFC),
+                  colorOutline: Color(0xff067CCB),
+                  note: "23.wav",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffCD80F7),
+                  colorOutline: Color(0xff8A47CC),
+                  note: "24.wav",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffADCBFC),
+                  colorOutline: Color(0xff067CCB),
+                  note: "25.wav",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffff2525),
+                  colorOutline: Color(0xffc40050),
+                  note: "26.wav",
+                ),
+                MixPad(
+                  colorCenter: Color(0xffADCBFC),
+                  colorOutline: Color(0xff067CCB),
+                  note: "27.wav",
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
+class MixPad extends StatefulWidget {
+  final colorCenter;
+  final colorOutline;
+  final note;
+  const MixPad(
+      {Key? key,
+      required this.colorCenter,
+      required this.colorOutline,
+      required this.note})
+      : super(key: key);
+  _MixPadState createState() => _MixPadState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+class _MixPadState extends State<MixPad> {
+  late Color colorCenter;
+  late Color colorOutline;
+  final player = AudioPlayer();
+  @override
+  void initState() {
+    colorCenter = widget.colorCenter;
+    colorOutline = widget.colorOutline;
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+    return GestureDetector(
+      onTap: () async {
+        player.play(AssetSource(widget.note));
+        setState(() {
+          colorCenter = Colors.white;
+          colorOutline = Colors.white;
+        });
+        await Future.delayed(Duration(milliseconds: 500));
+        setState(() {
+          colorCenter = widget.colorCenter;
+          colorOutline = widget.colorOutline;
+        });
+      },
+      child: Container(
+        height: height / 8.2,
+        width: width / 4.3,
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.pink,
+              blurRadius: 5.0,
             ),
           ],
+          borderRadius: BorderRadius.all(
+            Radius.circular(6.0),
+          ),
+          gradient: RadialGradient(
+            colors: [
+              colorCenter,
+              colorOutline,
+            ],
+            radius: 0.5,
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
